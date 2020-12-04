@@ -1,0 +1,19 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1>Salary List</h1>
+
+    {% if salary_list %}
+    <ul>
+
+      {% for salary in salary_list %}
+      <li>
+        <a href="{{ salary.get_absolute_url }}">{{ salary.title }}</a> ({{salary.employee}})
+      </li>
+      {% endfor %}
+
+    </ul>
+    {% else %}
+      <p>not in list</p>
+    {% endif %}
+{% endblock %}
